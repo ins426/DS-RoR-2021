@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :likes
+  resources :comentarios
+  resources :coveets
   resources :usuarios
   resources :developers
   resources :projects

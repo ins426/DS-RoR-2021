@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cuerpo:</strong>
+  <%= @coveet.cuerpo %>
+</p>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @coveet.likes %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @coveet.usuario_id %>
+</p>
+
+<%= link_to 'Edit', edit_coveet_path(@coveet) %> |
+<%= link_to 'Back', coveets_path %>

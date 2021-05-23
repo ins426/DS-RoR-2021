@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cuerpo: MyText
+  likes: 1
+  usuario: one
+
+two:
+  cuerpo: MyText
+  likes: 1
+  usuario: two

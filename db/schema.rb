@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_23_125835) do
+ActiveRecord::Schema.define(version: 2021_05_23_131453) do
+
+  create_table "comentarios", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "cuerpo"
+    t.bigint "usuario_id", null: false
+    t.bigint "coveet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coveet_id"], name: "index_comentarios_on_coveet_id"
+    t.index ["usuario_id"], name: "index_comentarios_on_usuario_id"
+  end
+
+  create_table "coveets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "cuerpo"
+    t.integer "likes"
+    t.bigint "usuario_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["usuario_id"], name: "index_coveets_on_usuario_id"
+  end
 
   create_table "developers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -20,6 +39,15 @@ ActiveRecord::Schema.define(version: 2021_05_23_125835) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_developers_on_project_id"
     t.index ["surname"], name: "index_developers_on_surname"
+  end
+
+  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "usuario_id", null: false
+    t.bigint "coveet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coveet_id"], name: "index_likes_on_coveet_id"
+    t.index ["usuario_id"], name: "index_likes_on_usuario_id"
   end
 
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -46,5 +74,10 @@ ActiveRecord::Schema.define(version: 2021_05_23_125835) do
     t.index ["username"], name: "index_usuarios_on_username", unique: true
   end
 
+  add_foreign_key "comentarios", "coveets"
+  add_foreign_key "comentarios", "usuarios"
+  add_foreign_key "coveets", "usuarios"
   add_foreign_key "developers", "projects"
+  add_foreign_key "likes", "coveets"
+  add_foreign_key "likes", "usuarios"
 end
