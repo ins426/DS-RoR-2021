@@ -1,0 +1,2 @@
+module CoveetsHelper
+end

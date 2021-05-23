@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coveets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cuerpo</th>
+      <th>Likes</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coveets.each do |coveet| %>
+      <tr>
+        <td><%= coveet.cuerpo %></td>
+        <td><%= coveet.likes %></td>
+        <td><%= coveet.usuario_id %></td>
+        <td><%= link_to 'Show', coveet %></td>
+        <td><%= link_to 'Edit', edit_coveet_path(coveet) %></td>
+        <td><%= link_to 'Destroy', coveet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coveet', new_coveet_path %>

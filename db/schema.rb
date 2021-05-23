@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_14_184022) do
+ActiveRecord::Schema.define(version: 2021_05_23_114117) do
+
+  create_table "comentarios", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "cuerpo"
+    t.bigint "usuario_id", null: false
+    t.bigint "coveet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coveet_id"], name: "index_comentarios_on_coveet_id"
+    t.index ["usuario_id"], name: "index_comentarios_on_usuario_id"
+  end
+
+  create_table "coveets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "cuerpo"
+    t.integer "likes"
+    t.bigint "usuario_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["usuario_id"], name: "index_coveets_on_usuario_id"
+  end
 
   create_table "developers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -31,5 +50,22 @@ ActiveRecord::Schema.define(version: 2021_05_14_184022) do
     t.index ["team"], name: "index_projects_on_team", unique: true
   end
 
+  create_table "tests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "usuarios", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "username"
+    t.text "pass"
+    t.boolean "isAdmin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "comentarios", "coveets"
+  add_foreign_key "comentarios", "usuarios"
+  add_foreign_key "coveets", "usuarios"
   add_foreign_key "developers", "projects"
 end
