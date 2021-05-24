@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   resources :usuarios
   resources :developers
   resources :projects
-  root "projects#index"
+  root "usuarios#index"
 
   namespace :api, defaults: { format: 'json' }  do
     namespace :v1 do
-      resources :projects
+      resources :projects, :usuarios, :coveets, :comentarios, :likes
     end
   end
   
