@@ -47,7 +47,7 @@ def destroy
 end
 private
 def usuario_params
-      params.require(:usuario).permit(:username, :pass, :isAdmin)
+      params.require(:usuario).permit(:username, :pass)
 end
 end
 end
