@@ -49,10 +49,20 @@ class AdministradorsController < ApplicationController
 
   # DELETE /administradors/1 or /administradors/1.json
   def destroy
-    @administrador.destroy
-    respond_to do |format|
-      format.html { redirect_to administradors_url, notice: "Administrador was successfully destroyed." }
-      format.json { head :no_content }
+    n_admins = Administrador.count
+
+    if n_admins > 1
+      @administrador.destroy
+      respond_to do |format|
+        format.html { redirect_to administradors_url, notice: "Administrador was successfully destroyed." }
+        format.json { head :no_content }
+      end
+
+    else
+      respond_to do |format|
+        format.html { redirect_to administradors_url, notice: "There must be at least one admin." }
+        format.json { head :no_content }
+      end
     end
   end
 
