@@ -9,9 +9,6 @@
 
 #div#preload { display: none; }
 
-#/html {hj
-#}
-
 body {
 	FONT-SIZE: 14px;
         font-COLOR: #000000; 
@@ -19,7 +16,7 @@ body {
         font-weight: normal;
         font-style: normal;
         line-height: normal;
-    background-image: url(fondoBios.png);
+    background-image: url('fondoBios.png');
     background-attachment: fixed;
     background-position: 0% 0%;
     background-repeat: no-repeat; /*no-tiling background*/
@@ -101,7 +98,7 @@ ol li {
         font-size: 14px;
         font-style: normal;
         line-height: normal;
-        padding-top: 0x;
+        padding-top: 0px;
 
 }
 
@@ -112,7 +109,7 @@ ul li {
         font-size: 14px;
         font-style: normal;
         line-height: normal;
-        padding-top: 0x;
+        padding-top: 0px;
 
 }
 
@@ -312,7 +309,7 @@ div.ejercicio ul li {
         font-size: 14px;
         font-style: normal;
         line-height: normal;
-        padding-top: 0x;
+        padding-top: 0px;
 
 }
  
