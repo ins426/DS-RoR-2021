@@ -4,31 +4,43 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Coveets</h1>
+<h1 class="titulo">Coveets</h1>
 
-<div class="contenedor_listado">
-  <div id="listado_coveets">
-    <% @coveets.each do |coveet| %>
-      <div class="coveet">
-        <div class="autor_coveet">
-          <%= coveet.usuario.username %>
-        </div>
-        <div class="cuerpo_coveet">
-          <%= coveet.cuerpo %>
-        </div>
+<div id="fila_principal">
+  <div class="side_panel">
 
-        <div class="footer_coveet">
-          <div class="btn_coveet">
-            <%= link_to 'Edit', edit_coveet_path(coveet) %>
-            <%= link_to 'Destroy', coveet, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+
+  <div class="contenedor_listado">
+    <div id="listado_coveets">
+      <% @coveets.each do |coveet| %>
+        <div class="coveet">
+          <div class="header_coveet">
+            <div class="user_picture">
+              <%= image_tag "woman.png", :size => "50x50"%>
+            </div>
+
+            <div class="autor_coveet">
+              <%= coveet.usuario.username %>
+            </div>
+          </div>
+          <div class="cuerpo_coveet">
+            <%= coveet.cuerpo %>
           </div>
 
-          <div class="likes_coveet">
-            Likes: <%= coveet.likes %>
+          <div class="footer_coveet">
+            <div class="btn_coveet">
+              <%= link_to 'Edit', edit_coveet_path(coveet) %>
+              <%= link_to 'Destroy', coveet, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+
+            <div class="likes_coveet">
+              Likes: <%= coveet.likes %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

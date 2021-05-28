@@ -9,22 +9,25 @@
 
 #div#preload { display: none; }
 
+
 body {
+	color: white;
 	FONT-SIZE: 14px;
         font-COLOR: #000000; 
         FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
         font-weight: normal;
         font-style: normal;
         line-height: normal;
-    background-image: url('fondoBios.png');
+	background-color: #211a1d;
+    /*background-image: url('fondoBios.png');*/
     background-attachment: fixed;
     background-position: 0% 0%;
     background-repeat: no-repeat; /*no-tiling background*/
     width: 100%;
-    height: 200%;
+    height: 100%;
     background-size: 100%;
+	margin: 0;
    /*background-color: #f8cb86;*/
-    margin: 10px;
 }
 
 p {
@@ -84,7 +87,7 @@ a:visited {
 color: #888888; 
 }
 a:hover {
-color: #000000;
+color: white;
 text-decoration: underline;
 }
 a:active {
@@ -330,4 +333,16 @@ display: inline;
 background-color: #2586d7;  
 margin-top:-2px;  
 padding-bottom:12px;  
-}  
+}
+
+
+.cabecera{
+	width: 100%;
+	height: 50px;
+	background-color: aqua;
+}
+
+
+.titulo{
+	color: white;
+}

@@ -2,19 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.side_panel{
+  width: 15%;
+  height: 600px;
+  background-color: white;
+}
+
+
+#fila_principal{
+  display: flex;
+}
+
+
 #listado_coveets {
   display: flex;
   align-items: center;
   flex-direction: column;
   font-size: 20px;
-  background-color: grey;
+  margin-right: 15%;
 }
 
 
 .contenedor_listado{
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 85%;
 }
 
 
@@ -22,7 +34,8 @@
   padding-left: 10px;
   background-color: white;
   margin-bottom: 5px;
-  width: 300px;
+  width: 500px;
+  color: black;
 }
 
 
@@ -42,6 +55,8 @@
 
 .autor_coveet{
   font-size: 15px;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 
@@ -53,4 +68,10 @@
 
 .btn_coveet{
   margin-right: auto;
+}
+
+
+.header_coveet{
+  display: flex;
+  margin-top: 10px;
 }
