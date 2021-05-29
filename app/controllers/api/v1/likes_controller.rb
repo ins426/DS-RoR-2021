@@ -5,9 +5,10 @@ module V1
 skip_before_action :verify_authenticity_token
 
 def show
-      @like = Like.find_by(id: params[:id])
-      if (@like!=nil)
-        render json: @like, status: :ok
+  #@like = Like.find_by(id: params[:id])
+  @likes = Like.where("usuario_id = ? AND coveet_id = ?", params[:usuario_id], params[:coveet_id])
+  if (@likes!=nil)
+    render json: @likes, status: :ok
   else
        render json: :nothing, status: :not_found
     end

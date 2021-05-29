@@ -10,11 +10,21 @@
   </head>
 
   <body>
+  <% if current_user %>
     <%= yield %>
+  <% else %>
+    <%= render :template => "sessions/new" %>
+  <% end %>
   </body>
 
-  <%= link_to "Panel de control", root_path %>
-  <%= link_to "Usuarios", :usuarios %>
-  <%= link_to "Coveets", :coveets %>
-  <%= link_to "Administradors", :administradors %>
+  <% yield :navigation %>
+
+  <%#= link_to "Panel de control", root_path %>
+  <%#= link_to "Usuarios", :usuarios %>
+  <%#= link_to "Coveets", :coveets %>
+  <%#= link_to "Administradors", :administradors %>
+
+  <%# content_for :navigation do %>
+
+  <%# end %>
 </html>
