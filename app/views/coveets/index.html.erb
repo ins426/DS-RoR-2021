@@ -5,45 +5,36 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="titulo">Coveets</h1>
+<%= link_to 'New Coveet', new_coveet_path %><br>
 
-<div id="fila_principal">
-  <div class="side_panel">
-
-  </div>
-
-  <div class="contenedor_listado">
-    <div id="listado_coveets">
-      <% @coveets.each do |coveet| %>
-        <div class="coveet">
-          <div class="header_coveet">
-            <div class="user_picture">
-              <%= image_tag "woman.png", :size => "50x50"%>
-            </div>
-
-            <div class="autor_coveet">
-              <%= coveet.usuario.username %>
-            </div>
-          </div>
-          <div class="cuerpo_coveet">
-            <%= coveet.cuerpo %>
+<div class="contenedor_listado">
+  <div id="listado_coveets">
+    <% @coveets.each do |coveet| %>
+      <div class="coveet">
+        <div class="header_coveet">
+          <div class="user_picture">
+            <%= image_tag "woman.png", :size => "50x50"%>
           </div>
 
-          <div class="footer_coveet">
-            <div class="btn_coveet">
-              <%= link_to 'Edit', edit_coveet_path(coveet) %>
-              <%= link_to 'Destroy', coveet, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-
-            <div class="likes_coveet">
-              Likes: <%= coveet.likes %>
-            </div>
+          <div class="autor_coveet">
+            <%= coveet.usuario.username %>
           </div>
         </div>
-      <% end %>
-    </div>
+        <div class="cuerpo_coveet">
+          <%= coveet.cuerpo %>
+        </div>
+
+        <div class="footer_coveet">
+          <div class="btn_coveet">
+            <%= link_to 'Edit', edit_coveet_path(coveet) %>
+            <%= link_to 'Destroy', coveet, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+
+          <div class="likes_coveet">
+            Likes: <%= coveet.likes %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-
-<br>
-
-<%= link_to 'New Coveet', new_coveet_path %>

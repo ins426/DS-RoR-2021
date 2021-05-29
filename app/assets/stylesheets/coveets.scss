@@ -2,31 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.side_panel{
-  width: 15%;
-  height: 600px;
-  background-color: white;
-}
-
-
-#fila_principal{
-  display: flex;
-}
-
-
 #listado_coveets {
   display: flex;
   align-items: center;
   flex-direction: column;
   font-size: 20px;
-  margin-right: 15%;
 }
 
 
 .contenedor_listado{
   margin-left: auto;
   margin-right: auto;
-  width: 85%;
 }
 
 
@@ -74,4 +60,13 @@
 .header_coveet{
   display: flex;
   margin-top: 10px;
+}
+
+
+.btn_coveet > a{
+  color: black;
+}
+
+.titulo{
+  margin-right: 15px;
 }
