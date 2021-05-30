@@ -37,14 +37,6 @@ def create
       end
 end
 
-def destroy
-    @comentario = Comentario.find_by(id: params[:id])
-    if @comentario.destroy
-      render json: :nothing, status: :ok
-    else
-      render json: :nothing, status: :unprocessable_entity
-    end
-end
 private
 def comentario_params
       params.require(:comentario).permit(:cuerpo, :usuario_id, :coveet_id)
