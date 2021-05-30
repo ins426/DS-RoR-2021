@@ -1,8 +1,15 @@
+<head>
+  <%= stylesheet_link_tag :home %>
+</head>
 <% if current_user %>
-  Logged in as <%= current_user.username %>.
-  <%= link_to "Log Out", logout_path %>
-  <h1>Example</h1>
-  <p>Lorem ipsum …</p>
+  <p id="cerrar-sesion"><%= link_to "Cerrar Sesión", logout_path %></p>
+  <h1>Panel de control</h1>
+  <h1 id="bienvenida">Bienvenido <%= current_user.username %>!</h1>
+  <div id="panel-contenedor">
+     <a href="http://clados.ugr.es/DS13/coveets"><div id="coveets" class="opcion"> Coveets </div></a>
+     <a href="http://clados.ugr.es/DS13/administradors"><div id="usuarios" class="opcion"> Usuarios </div></a>
+     <a href="http://clados.ugr.es/DS13/usuarios"><div id="admis" class="opcion"> Administradores </div></a>
+  </div>
 <% else %>
   <%= render :template => "sessions/new" %>
   <%#= link_to "Log In", login_path %>

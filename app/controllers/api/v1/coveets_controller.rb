@@ -37,14 +37,6 @@ def create
       end
 end
 
-def destroy
-    @coveet = Coveet.find_by(id: params[:id])
-    if @coveet.destroy
-      render json: :nothing, status: :ok
-    else
-      render json: :nothing, status: :unprocessable_entity
-    end
-end
 private
 def coveet_params
       params.require(:coveet).permit(:cuerpo, :usuario_id, :likes)

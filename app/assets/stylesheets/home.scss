@@ -1,3 +1,36 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#panel-contenedor{
+ display:flex;
+ font-size:20px;
+ align-content:center;
+ flex-direction:column;
+ justify-content:center;
+ margin-left:auto;
+ margin-right:auto;
+ width:20em;
+}
+
+.opcion{
+ color:white;
+ margin-top:1em;
+ background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+ border-radius: 10px;
+ padding: 15px 45px;
+ text-align: center;
+ text-transform: uppercase;
+ transition: 0.5s;
+ background-size: 200% auto;
+}
+
+#bienvenida{
+ font-size:16px;
+ color:black;
+}
+
+#cerrar-sesion{
+ justify-content: end; 
+ display: flex;
+ margin-left:90vw;
+}
