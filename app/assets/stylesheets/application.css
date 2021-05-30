@@ -84,11 +84,11 @@ a {
         text-decoration: none;
 }
 a:link {
-color: #ffffff;
+color: black;
 }
 
 a:visited {
-color: #888888; 
+	color: black;
 }
 a:hover {
 color: black;
