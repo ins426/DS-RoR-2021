@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     administrador = Administrador.find_by(username: params[:username])
     if administrador && administrador.authenticate(params[:password])
       session[:user_id] = administrador.id
-      redirect_to root_url, notice: "Logged in!"
+      redirect_to root_url
     else
       flash.now[:alert] = "Email or password is invalid"
       render "new"
