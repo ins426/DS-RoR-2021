@@ -4,22 +4,24 @@
 
 <p id="alert"><%= alert %></p>
 
-<h1>Login</h1>
 <div id="contenedor_login">
-  <%= form_tag sessions_path do |form| %>
-    <div id="fusername" class="field">
-      <%= label_tag :username %>
-      <%= text_field_tag :username %>
-    </div>
+  <div id="login">
+    <h1 id="login_title">Inicia sesión</h1><br>
+    <%= form_tag sessions_path do |form| %>
+      <div id="fusername" class="field">
+        <b><%= label_tag :username %>: </b>
+        <%= text_field_tag :username %>
+      </div>
 
-    <div id="fpassword" class="field">
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
-    </div>
+      <div id="fpassword" class="field">
+        <b><%= label_tag :password %>: </b>
+        <%= password_field_tag :password %>
+      </div>
 
-    <div id="fbtn" class="actions">
-      <%= submit_tag "Login" %>
-    </div>
-  <% end %>
+      <div id="fbtn" class="actions">
+        <%= submit_tag "Login" %>
+      </div>
+    <% end %>
+  </div>
 </div>
 

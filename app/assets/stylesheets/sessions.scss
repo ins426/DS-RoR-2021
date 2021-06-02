@@ -3,9 +3,27 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 #contenedor_login{
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
   text-align: center;
 }
+
+#login{
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.67);
+  width: 450px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+
+#login_title{
+  margin-bottom: 40px;
+}
+
 
 #fusername{
   margin-bottom: 10px;
