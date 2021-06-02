@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   def create
     administrador = Administrador.find_by(username: params[:username])
     if administrador && administrador.authenticate(params[:password])
+      SessionMailer.with(administrador: administrador).login_email.deliver_later
       session[:user_id] = administrador.id
       redirect_to root_url
     else
