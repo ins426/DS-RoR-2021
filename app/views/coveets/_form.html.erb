@@ -1,3 +1,7 @@
+<head>
+  <%= stylesheet_link_tag :coveets %>
+</head>
+
 <%= form_with(model: coveet) do |form| %>
   <% if coveet.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +15,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :cuerpo %>
-    <%= form.text_area :cuerpo %>
+  <div id="formulario_coveet">
+    <div class="field campo_coveet">
+      <b><%= form.label :cuerpo %>: </b>
+      <%= form.text_area :cuerpo %>
+    </div>
+
+    <div class="field campo_coveet">
+      <b class="label"><%= form.label :likes %>: </b>
+      <%= form.number_field :likes %>
+    </div>
+
+    <div class="field campo_coveet">
+      <b><%= form.label :usuario_id %>: </b>
+      <%= form.text_field :usuario_id %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :likes %>
-    <%= form.number_field :likes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :usuario_id %>
-    <%= form.text_field :usuario_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

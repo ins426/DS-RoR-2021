@@ -1,3 +1,7 @@
+<head>
+  <%= stylesheet_link_tag :usuarios %>
+</head>
+
 <%= form_with(model: usuario) do |form| %>
   <% if usuario.errors.any? %>
     <div id="error_explanation">
@@ -11,17 +15,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
+  <div id="formulario_usuario">
+    <div class="field campo_usuario">
+      <b><%= form.label :username %>: </b>
+      <%= form.text_field :username %>
+    </div>
 
-  <div class="field">
-    <%= form.label :pass %>
-    <%= form.text_area :pass %>
-  </div>
+    <div class="field campo_usuario">
+      <b><%= form.label :pass %>: </b>
+      <%= form.text_area :pass %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions campo_usuario">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

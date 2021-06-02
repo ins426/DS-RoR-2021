@@ -1,3 +1,7 @@
+<head>
+  <%= stylesheet_link_tag :administradors %>
+</head>
+
 <%= form_with(model: administrador) do |form| %>
   <% if administrador.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +15,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div id="formulario_administrador">
+    <div class="field contenedor_entrada">
+      <b class="label"><%= form.label :email %>: </b>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class="field contenedor_entrada">
+      <b class="label"><%= form.label :username %>: </b>
+      <%= form.text_field :username %>
+    </div>
+
+    <div class="field contenedor_entrada">
+      <b class="label"><%= form.label :password %>: </b>
+      <%= form.password_field :password %>
+    </div>
+
+    <div class="field contenedor_entrada">
+      <b class="label"><%= form.label :password_confirmation %>: </b>
+      <%= form.password_field :password_confirmation %>
+    </div>
+
+    <div class="actions contenedor_entrada">
+      <%= form.submit %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
