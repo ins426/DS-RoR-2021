@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   resources :comentarios
   resources :coveets
   resources :usuarios
-  resources :developers
-  resources :projects
   resources :sessions, only: [:create, :destroy]
   root "home#index"
   
