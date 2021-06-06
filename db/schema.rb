@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_110007) do
+ActiveRecord::Schema.define(version: 2021_06_05_091344) do
 
   create_table "administradors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "username"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_110007) do
 
   create_table "coveets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "cuerpo", null: false
-    t.integer "likes"
+    t.integer "likes", default: 0
     t.bigint "usuario_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
