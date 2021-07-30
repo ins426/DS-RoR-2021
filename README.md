@@ -1,24 +1,6 @@
-# README
+# Desarrollo de Software - Práctica 4, Desarrollo de una aplicación multiplataforma
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Curso: 2020/21
+Autores:
+* :bust_in_silhouette:   Sergio García Cabrera     :octocat: [@Olasergiolas](https://github.com/Olasergiolas)    
+* :bust_in_silhouette:  Inés Nieto Sánchez     :octocat: [@ins426](https://github.com/ins426)
